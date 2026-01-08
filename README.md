@@ -2,9 +2,9 @@
 
 Transform dead loading time into engaging micro-interactions.
 
-Demo:
-
-<video src="https://hypeliv-assets.s3.ap-south-1.amazonaws.com/waitroom_demo.mp4" width="100%" controls autoplay loop></video>
+<a href="https://hypeliv-assets.s3.ap-south-1.amazonaws.com/waitroom_demo.mp4">
+Demo Video
+</a>
 
 ## Installation
 

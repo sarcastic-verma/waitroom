@@ -4,7 +4,7 @@ Transform dead loading time into engaging micro-interactions.
 
 Demo:
 
-<video src="https://github.com/sarcastic-verma/waitroom/raw/main/docs/demo.mp4" width="100%" controls autoplay loop></video>
+<video src="https://github.com/sarcastic-verma/waitroom/raw/refs/heads/main/docs/waitroom_demo.mp4" width="100%" controls autoplay loop></video>
 
 ## Installation
 

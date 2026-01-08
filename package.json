@@ -1,6 +1,6 @@
 {
   "name": "waitroom",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Transform dead loading time into engaging micro-interactions",
   "license": "MIT",
   "type": "module",

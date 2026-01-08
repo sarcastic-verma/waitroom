@@ -1,0 +1,64 @@
+{
+  "name": "waitroom",
+  "version": "0.0.1",
+  "description": "Transform dead loading time into engaging micro-interactions",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js",
+      "require": "./dist/core/index.cjs"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "require": "./dist/react/index.cjs"
+    },
+    "./games/*": {
+      "types": "./dist/games/*.d.ts",
+      "import": "./dist/games/*.js",
+      "require": "./dist/games/*.cjs"
+    },
+    "./facts/*": {
+      "types": "./dist/facts/*.d.ts",
+      "import": "./dist/facts/*.js",
+      "require": "./dist/facts/*.cjs"
+    },
+    "./doodle/*": {
+      "types": "./dist/doodle/*.d.ts",
+      "import": "./dist/doodle/*.js",
+      "require": "./dist/doodle/*.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "lint": "eslint src/**",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0",
+    "tsup": "^8.0.0",
+    "vitest": "^1.0.0",
+    "happy-dom": "^14.0.0"
+  }
+}

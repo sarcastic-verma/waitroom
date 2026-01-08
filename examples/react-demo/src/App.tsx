@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { LoadingInteraction } from "waitroom";
-import { SnakeGame } from "waitroom/games/snake";
+// import { SnakeGame } from "waitroom/games/snake";
+import { ClickCounterGame } from "waitroom/games/click-counter";
+// import { MemoryGame } from "waitroom/games/memory";
 import { DevTipsFacts } from "waitroom/facts/dev-tips";
 import { BasicDoodle } from "waitroom/doodle/basic-canvas";
 
@@ -18,7 +20,9 @@ function App() {
             isLoading={loading}
             availableModes={["game", "facts", "doodle"]}
             mode="game"
-            game={SnakeGame}
+            // game={SnakeGame}
+            // game={MemoryGame}
+            game={ClickCounterGame}
             facts={DevTipsFacts}
             doodle={BasicDoodle}
             // Aesthetic props

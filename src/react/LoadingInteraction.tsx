@@ -57,16 +57,21 @@ export const LoadingInteraction: React.FC<LoadingInteractionProps> = (
         <div
           style={{
             position: "absolute",
-            bottom: 10,
-            width: "100%",
-            zIndex: 10,
+            bottom: 12,
+            right: 12,
+            width: "auto",
+            zIndex: 20,
+            pointerEvents: "none", // Allow clicks to pass through transparent areas
           }}
         >
-          <ModeSwitcher
-            modes={availableModes}
-            activeMode={currentMode}
-            onModeChange={setCurrentMode}
-          />
+          {/* Re-enable pointer events for the switcher items */}
+          <div style={{ pointerEvents: "auto" }}>
+            <ModeSwitcher
+              modes={availableModes}
+              activeMode={currentMode}
+              onModeChange={setCurrentMode}
+            />
+          </div>
         </div>
       )}
       <div

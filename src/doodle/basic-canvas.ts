@@ -37,18 +37,30 @@ class CanvasInstance implements DoodleInstance {
 
     // Clear Button
     const clearBtn = document.createElement("button");
-    clearBtn.innerText = "Clear";
-    clearBtn.style.marginTop = "10px";
-    clearBtn.style.padding = "5px 10px";
+    clearBtn.innerText = "Clear Canvas";
+    clearBtn.style.marginTop = "15px";
+    clearBtn.style.padding = "8px 16px";
     clearBtn.style.cursor = "pointer";
-    clearBtn.style.border = "1px solid #ccc";
-    clearBtn.style.borderRadius = "4px";
-    clearBtn.style.backgroundColor = "#fff";
+    clearBtn.style.border = "none";
+    clearBtn.style.borderRadius = "20px";
+    clearBtn.style.backgroundColor = "#e2e8f0";
+    clearBtn.style.color = "#475569";
+    clearBtn.style.fontWeight = "600";
+    clearBtn.style.fontSize = "0.9rem";
+    clearBtn.style.transition = "all 0.2s ease";
+    clearBtn.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
+
     clearBtn.onclick = () => this.clear();
 
     // Add hover effect
-    clearBtn.onmouseenter = () => (clearBtn.style.backgroundColor = "#f0f0f0");
-    clearBtn.onmouseleave = () => (clearBtn.style.backgroundColor = "#fff");
+    clearBtn.onmouseenter = () => {
+      clearBtn.style.backgroundColor = "#cbd5e1";
+      clearBtn.style.transform = "translateY(-1px)";
+    };
+    clearBtn.onmouseleave = () => {
+      clearBtn.style.backgroundColor = "#e2e8f0";
+      clearBtn.style.transform = "translateY(0)";
+    };
 
     this.container.appendChild(clearBtn);
   }
@@ -83,6 +95,27 @@ class CanvasInstance implements DoodleInstance {
     this.canvas.addEventListener("mousemove", this.draw.bind(this));
     this.canvas.addEventListener("mouseup", this.stop.bind(this));
     this.canvas.addEventListener("mouseout", this.stop.bind(this));
+
+    // Touch support
+    this.canvas.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = this.canvas.getBoundingClientRect();
+      this.start({
+        offsetX: touch.clientX - rect.left,
+        offsetY: touch.clientY - rect.top,
+      } as any);
+    });
+    this.canvas.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = this.canvas.getBoundingClientRect();
+      this.draw({
+        offsetX: touch.clientX - rect.left,
+        offsetY: touch.clientY - rect.top,
+      } as any);
+    });
+    this.canvas.addEventListener("touchend", this.stop.bind(this));
   }
 
   private start(e: MouseEvent) {

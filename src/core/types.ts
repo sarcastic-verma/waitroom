@@ -83,6 +83,7 @@ export interface Fact {
 export interface FactsConfig {
   rotationInterval?: number;
   showSource?: boolean;
+  shuffle?: boolean;
 }
 
 export interface FactsInstance {

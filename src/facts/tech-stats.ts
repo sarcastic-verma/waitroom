@@ -1,6 +1,7 @@
-import { FactsPlugin, FactsInstance, Fact } from "../core/types";
+import { FactsPlugin, Fact } from "../core/types";
+import { BaseFactsRenderer } from "./base-renderer";
 
-const STATS: Fact[] = [
+export const STATS: Fact[] = [
   { id: "1", text: "JavaScript is used by 98% of websites", category: "stats" },
   {
     id: "2",
@@ -9,26 +10,11 @@ const STATS: Fact[] = [
   },
 ];
 
-class StatsRenderer implements FactsInstance {
-  private container: HTMLElement;
-  constructor(container: HTMLElement, facts: Fact[]) {
-    this.container = container;
-    this.container.innerText = facts[0].text;
-  }
-
-  next() {}
-  previous() {}
-  favorite() {}
-  destroy() {
-    this.container.innerHTML = "";
-  }
-}
-
 export const TechStats: FactsPlugin = {
   id: "tech-stats",
   name: "Tech Stats",
   category: "stats",
   facts: STATS,
-  renderMini: (c) => new StatsRenderer(c, STATS),
-  renderFull: (c) => new StatsRenderer(c, STATS),
+  renderMini: (c, cfg) => new BaseFactsRenderer(c, STATS, cfg),
+  renderFull: (c, cfg) => new BaseFactsRenderer(c, STATS, cfg),
 };

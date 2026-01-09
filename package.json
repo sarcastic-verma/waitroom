@@ -1,6 +1,6 @@
 {
   "name": "waitroom",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Transform dead loading time into engaging micro-interactions",
   "license": "MIT",
   "type": "module",
@@ -23,15 +23,30 @@
       "import": "./dist/react/index.js",
       "require": "./dist/react/index.cjs"
     },
+    "./games": {
+      "types": "./dist/games/index.d.ts",
+      "import": "./dist/games/index.js",
+      "require": "./dist/games/index.cjs"
+    },
     "./games/*": {
       "types": "./dist/games/*.d.ts",
       "import": "./dist/games/*.js",
       "require": "./dist/games/*.cjs"
     },
+    "./facts": {
+      "types": "./dist/facts/index.d.ts",
+      "import": "./dist/facts/index.js",
+      "require": "./dist/facts/index.cjs"
+    },
     "./facts/*": {
       "types": "./dist/facts/*.d.ts",
       "import": "./dist/facts/*.js",
       "require": "./dist/facts/*.cjs"
+    },
+    "./doodle": {
+      "types": "./dist/doodle/index.d.ts",
+      "import": "./dist/doodle/index.js",
+      "require": "./dist/doodle/index.cjs"
     },
     "./doodle/*": {
       "types": "./dist/doodle/*.d.ts",

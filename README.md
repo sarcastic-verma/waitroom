@@ -2,6 +2,10 @@
 
 Transform dead loading time into engaging micro-interactions.
 
+Built by <a href="https://launch.hypeliv.com">Hypeliv</a>
+
+<a href="https://github.com/sarcastic-verma/waitroom">Github link</a>
+
 <a href="https://hypeliv-assets.s3.ap-south-1.amazonaws.com/waitroom_demo.mp4">
 Demo Video
 </a>

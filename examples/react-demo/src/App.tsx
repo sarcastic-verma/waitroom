@@ -3,7 +3,7 @@ import { LoadingInteraction } from "waitroom";
 // import { SnakeGame } from "waitroom/games/snake";
 import { ClickCounterGame } from "waitroom/games/click-counter";
 // import { MemoryGame } from "waitroom/games/memory";
-import { DevTipsFacts } from "waitroom/facts/dev-tips";
+import { FactRandomizer } from "waitroom/facts";
 import { BasicDoodle } from "waitroom/doodle/basic-canvas";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
             // game={SnakeGame}
             // game={MemoryGame}
             game={ClickCounterGame}
-            facts={DevTipsFacts}
+            facts={FactRandomizer}
             doodle={BasicDoodle}
             // Aesthetic props
             transitionDuration={400}
